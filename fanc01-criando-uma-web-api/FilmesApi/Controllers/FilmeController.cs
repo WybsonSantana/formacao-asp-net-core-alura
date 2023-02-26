@@ -33,10 +33,7 @@ public class FilmeController : ControllerBase
     {
         var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
 
-        if (filme == null)
-        {
-            return NotFound();
-        }
+        if (filme == null) return NotFound();
 
         return Ok(filme);
     }
@@ -44,7 +41,7 @@ public class FilmeController : ControllerBase
     [HttpPost]
     public IActionResult AdcionaFilme([FromBody] CreateFilmeDto filmeDto)
     {
-        Filme filme = _mapper.Map<Filme>(filmeDto);
+        var filme = _mapper.Map<Filme>(filmeDto);
 
         _context.Filmes.Add(filme);
         _context.SaveChanges();
@@ -54,5 +51,18 @@ public class FilmeController : ControllerBase
             new { id = filme.Id },
             value: filme
             );
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult atualizaFilme(int id, [FromBody] UpdateFilmeDto filmeDto)
+    {
+        var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+
+        if (filme == null) return NotFound();
+
+        _mapper.Map(filmeDto, filme);
+        _context.SaveChanges();
+
+        return NoContent();
     }
 }
