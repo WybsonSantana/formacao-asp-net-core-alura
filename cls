@@ -1,0 +1,47 @@
+[33mcommit a069972f9b6a1022aca4dd5545cd87119fae509b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: WybsonSantana <wybson@hotmail.com>
+Date:   Sun Feb 26 09:53:35 2023 -0300
+
+    fanc01 - aula 3 - Padronizando o retorno
+
+[33mcommit c1be6ed8ecbb46f19959f5da4648faf4617439a3[m
+Author: WybsonSantana <wybson@hotmail.com>
+Date:   Sun Feb 26 09:01:14 2023 -0300
+
+    fanc01 - aula 3 - Paginando resultados
+
+[33mcommit 9bced173dda92258b620a35a251e64d80a8ba4d9[m
+Author: WybsonSantana <wybson@hotmail.com>
+Date:   Sun Feb 26 01:55:30 2023 -0300
+
+    fanc01 - aula 3 - Recuperando filmes por ID
+
+[33mcommit d8513181917138cf0ac9ae2d45751832063695f0[m
+Author: WybsonSantana <wybson@hotmail.com>
+Date:   Sun Feb 26 01:24:24 2023 -0300
+
+    fanc01 - aula 3 - Retornando filmes da API
+
+[33mcommit 0af90cf18b8665e058dd727cea97e0ba0db6d88a[m
+Author: WybsonSantana <wybson@hotmail.com>
+Date:   Sun Feb 26 00:29:18 2023 -0300
+
+    fanc01 - aula 2 - Recebendo os dados de um filme
+
+[33mcommit 2501059c4941a71076aabca248b0bce164a231ac[m
+Author: WybsonSantana <wybson@hotmail.com>
+Date:   Sat Feb 25 13:59:50 2023 -0300
+
+    fanc01 - aula 1 - Criando um projeto .NET 6
+
+[33mcommit b541de72b6902ab3d73c45ab947337f0058e0184[m
+Author: WybsonSantana <wybson@hotmail.com>
+Date:   Sat Feb 25 12:41:31 2023 -0300
+
+    Add gitignore file
+
+[33mcommit 722e544c93399f0f9e4bbcd83a4c9768e08ea82c[m
+Author: Wybson Santana <83105564+WybsonSantana@users.noreply.github.com>
+Date:   Sat Feb 25 12:39:41 2023 -0300
+
+    Initial commit
