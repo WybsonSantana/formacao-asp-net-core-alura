@@ -21,6 +21,11 @@ public class FilmeController : ControllerBase
         _mapper = mapper;
     }
 
+    /// <summary>
+    /// Lista todos os filmes do banco de dados
+    /// </summary>
+    /// <returns>IActionResult</returns>
+    /// <response code="200">Caso a consulta seja feita com sucesso</response>
     [HttpGet]
     public IEnumerable<ReadFilmeDto> listaFilmes(
         [FromQuery] int skip = 0,
@@ -41,7 +46,14 @@ public class FilmeController : ControllerBase
         return Ok(filmeDto);
     }
 
+    /// <summary>
+    /// Adiciona um filme ao banco de dados
+    /// </summary>
+    /// <param name="filmeDto">Objeto com os campos necessários para criação de um filme</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
     [HttpPost]
+    //[ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult AdcionaFilme([FromBody] CreateFilmeDto filmeDto)
     {
         var filme = _mapper.Map<Filme>(filmeDto);
