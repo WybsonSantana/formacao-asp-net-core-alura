@@ -12,10 +12,8 @@ builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
 
 builder.Services.AddDbContext<FilmeContext>(options =>
-options.UseMySql(
-    connectionString: connectionString,
-    serverVersion: ServerVersion.AutoDetect(connectionString)
-    ));
+options.UseLazyLoadingProxies()
+.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
