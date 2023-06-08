@@ -13,4 +13,6 @@ public class Endereco
 
     [Required(ErrorMessage = "O campo número é obrigatório")]
     public int Numero { get; set; }
+
+    public virtual Cinema Cinema { get; set; }
 }
