@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FilmesApi.DTOs
+namespace FilmesApi.DTOs;
+
+public class CreateCinemaDto
 {
-    public class CreateCinemaDto
-    {
-        [Required]
-        public string Nome { get; set; }
-    }
+    [Required]
+    public string Nome { get; set; }
 }
