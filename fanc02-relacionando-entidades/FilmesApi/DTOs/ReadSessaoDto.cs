@@ -2,5 +2,5 @@
 
 public class ReadSessaoDto
 {
-    public int Id { get; set; } 
+    public int Id { get; set; }
 }

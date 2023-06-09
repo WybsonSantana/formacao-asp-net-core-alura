@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using FilmesApi.Data;
+using FilmesApi.DTOs;
 using FilmesApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FilmesApi.DTOs;
+namespace FilmesApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -24,7 +25,7 @@ public class SessaoController : ControllerBase
         Sessao sessao = _mapper.Map<Sessao>(dto);
         _context.Sessoes.Add(sessao);
         _context.SaveChanges();
-        return CreatedAtAction(nameof(RecuperaSessoesPorId), new { Id = sessao.Id }, sessao);
+        return CreatedAtAction(nameof(RecuperaSessoesPorId), new { sessao.Id }, sessao);
     }
 
     [HttpGet]
