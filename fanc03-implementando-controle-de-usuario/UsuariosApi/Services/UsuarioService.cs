@@ -10,17 +10,20 @@ public class UsuarioService
     private IMapper _mapper;
     private UserManager<Usuario> _userManager;
     private SignInManager<Usuario> _signInManager;
+    private TokenService _tokenService;
 
-    public UsuarioService(IMapper mapper, UserManager<Usuario> userManager, SignInManager<Usuario> signInManager)
+    public UsuarioService(IMapper mapper, UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, TokenService tokenService)
     {
         _mapper = mapper;
         _userManager = userManager;
         _signInManager = signInManager;
+        _tokenService = tokenService;
     }
 
-    public async Task Cadastra(CreateUsuarioDto createUsuarioDto)
+    public async Task CadastraUsuario(CreateUsuarioDto createUsuarioDto)
     {
         Usuario usuario = _mapper.Map<Usuario>(createUsuarioDto);
+
         IdentityResult resultado = await
         _userManager.CreateAsync(usuario, createUsuarioDto.Password);
 
@@ -38,5 +41,7 @@ public class UsuarioService
         {
             throw new ApplicationException("Usuário não autenticado!");
         }
+
+        _tokenService.GenerateToken(usuario);
     }
 }
