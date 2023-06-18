@@ -20,6 +20,7 @@ builder.Services
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddScoped<TokenService>();
 builder.Services.AddScoped<UsuarioService>();
 
 builder.Services.AddControllers();
