@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using UsuariosApi.Authorization;
 using UsuariosApi.Data;
 using UsuariosApi.Models;
 using UsuariosApi.Services;
@@ -31,6 +33,8 @@ builder.Services.AddAuthorization(options =>
     policy.AddRequirements(new IdadeMinima(18)));
 }
 );
+
+builder.Services.AddSingleton<IAuthorizationHandler, IdadeAuthorization>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
